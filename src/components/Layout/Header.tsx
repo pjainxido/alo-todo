@@ -1,27 +1,24 @@
-import styled from '@emotion/styled';
-import { Link as RouterLink } from 'react-router-dom';
-import { AppBar, Container, Typography, Toolbar, Box, Link } from '@mui/material';
+import { Link } from 'react-router-dom';
+import { AppBar, Container, Box } from '@mui/material';
 
 const Header = () => {
   return (
-    <AppBar component='nav' style={{ backgroundColor: '#fff' }}>
+    <AppBar
+      component='nav'
+      style={{
+        padding: '8px 0',
+        boxShadow: 'none',
+        backgroundColor: 'transparent',
+        fontSize: 0,
+      }}
+    >
       <Container>
-        <Toolbar sx={{ justifyContent: 'space-between' }}>
-        </Toolbar>
+        <Link to='/'>
+          <img src='/logo.svg' alt='colawork logo' />
+        </Link>
       </Container>
     </AppBar>
   );
 };
-
-const StyledLink = styled(RouterLink)`
-  text-decoration: none;
-  &:focus,
-  &:hover,
-  &:visited,
-  &:link,
-  &:active {
-    text-decoration: none;
-  }
-`;
 
 export default Header;
