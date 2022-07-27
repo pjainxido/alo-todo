@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
@@ -8,9 +9,11 @@ import Layout from './components/Layout';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
-  <TodoListProvider>
-    <Layout>
-      <App />
-    </Layout>
-  </TodoListProvider>
+  <BrowserRouter>
+    <TodoListProvider>
+      <Layout>
+        <App />
+      </Layout>
+    </TodoListProvider>
+  </BrowserRouter>
 );
