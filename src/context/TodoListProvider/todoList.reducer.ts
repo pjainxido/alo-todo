@@ -24,13 +24,19 @@ const generateId = (idList: number[]): number => {
 
 const todoListReducer = (state: TodoListState, action: TodoListAction): TodoListState => {
   switch (action.type) {
+    case 'LOAD_TODO':
+      // response로 오는 todo id 가 0~ 99 형식이 아니므로 수정
+      return {
+        ...state,
+        todoList: [...action.todoList.map((item, index) => ({ ...item, id: index }))],
+      };
     case 'ADD_TODO':
       if (todoListReducer.length >= TODOLIST_MAX_LENGTH) return state;
       const todoIdList = getIdList(state.todoList);
       const id = generateId(todoIdList);
       return {
         ...state,
-        todoList: [...state.todoList, { id, value: action.value }],
+        todoList: [{ id, value: action.value }, ...state.todoList],
       };
     case 'REMOVE_TODO':
       return {

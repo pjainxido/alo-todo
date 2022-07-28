@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react';
-import { Box, Button, Grid, FormControl, Typography } from '@mui/material';
+import { useState } from 'react';
 import { LoginFormBox, LoginButton, LoginFormTitle, LoginTextField } from './LoginForm.style';
 import { requestLogin } from '../../service/auth';
 import { setCookie } from '../../utils/cookie';
@@ -25,16 +24,13 @@ const LoginForm = () => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = event.target;
     setFormValues((values) => ({ ...values, [name]: value }));
-    console.log(formValues);
   };
 
   const handleSubmit = async (event: React.FormEvent) => {
     try {
       event.preventDefault();
       const data = await requestLogin(formValues.id, formValues.password);
-      console.log(data);
       if (data['access_token']) {
-        console.log('success');
         setCookie('access_token', data['access_token'], { path: '/' });
         setLoginUser(formValues.id);
       }

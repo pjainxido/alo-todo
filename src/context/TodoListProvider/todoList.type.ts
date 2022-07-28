@@ -11,6 +11,7 @@ export type TodoListState = {
 };
 
 export type TodoListAction =
+  | { type: 'LOAD_TODO'; todoList: Todo[] }
   | { type: 'ADD_TODO'; value: string }
   | { type: 'REMOVE_TODO'; id: number }
   | { type: 'DONE_TODO'; id: number }
