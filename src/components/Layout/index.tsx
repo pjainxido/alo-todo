@@ -6,7 +6,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <>
       <Header />
-      <Container maxWidth='sm'>
+      <Container>
         <Box sx={{ minHeight: '80vh', marginTop: '10vh' }}>{children}</Box>
       </Container>
     </>

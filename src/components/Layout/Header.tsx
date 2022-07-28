@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { AppBar, Container, Box } from '@mui/material';
+import { AppBar, Container } from '@mui/material';
 
 const Header = () => {
   return (
