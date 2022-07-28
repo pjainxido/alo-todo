@@ -1,6 +1,6 @@
 import { Todo } from '../context/TodoListProvider/todoList.type';
 import { getCookie } from '../utils/cookie';
-import { BASE_URL, ServiceResponse } from '../utils/request';
+import { BASE_URL, ServiceResponse } from './request';
 
 export type TodoListResponse = {
   'current-user': string;

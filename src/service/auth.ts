@@ -1,4 +1,4 @@
-import { BASE_URL, ServiceResponse } from '../utils/request';
+import { BASE_URL, ServiceResponse } from './request';
 
 export type LoginResponse = ServiceResponse & {
   'access_token': string;
